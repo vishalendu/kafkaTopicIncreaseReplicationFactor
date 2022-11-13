@@ -23,6 +23,8 @@ Script to help with increasing Kafka topic Replication Factor
         ./kafka-topics --zookeeper $ZOOKEEPER_CONNECT --describe --topic __consumer_offsets
         
 
+# My Script to generate the Json File
+
 The most important part of this process is the json file that needs to be created. To make it automatable, I have written a small script that should be able to generate an output consisting of the json provided:
 topic= <name of the topic>
 partition= <total partitions in the topic>
