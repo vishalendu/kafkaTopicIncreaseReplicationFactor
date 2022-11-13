@@ -1,7 +1,7 @@
 # kafkaTopicIncreaseReplicationFactor
 Script to help with increasing Kafka topic Replication Factor
 
-# Reference https://gist.github.com/uarun/da30d8ef52b5d57b145cd13694c8acdc
+[Reference https://gist.github.com/uarun/da30d8ef52b5d57b145cd13694c8acdc]
 
 # Increasing replication factor for a topic
 
