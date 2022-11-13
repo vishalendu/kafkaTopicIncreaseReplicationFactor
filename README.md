@@ -31,10 +31,14 @@ partition= "total partitions in the topic"
 brokers= "number of brokers"  
 replicationfactor= "desired replication factor"  
 ```
-
-While using the script in bash you can do ```source createKafkaRebalanceJson``` to load its member functions in memory and then you can call the function as follows:  
+  
+While using the script in bash you can do 
+```source createKafkaRebalanceJson``` 
+to load its member functions in memory and then you can call the function as follows:  
+  
+  
 sample usage: (topic= test, partition=50, brokers=5, replicationfactor=3)  
 ```
-getKafkaResizeJson "test" 50 5 3
+getKafkaResizeJson "test" 26 5 3
 ```  
 
