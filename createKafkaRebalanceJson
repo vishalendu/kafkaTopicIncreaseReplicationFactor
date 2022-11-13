@@ -1,0 +1,53 @@
+function floor(){
+output=${1%.*}
+echo $output
+}
+
+function getKafkaResizeJson(){
+### Sample values
+#topicname="__consumer_offsets"
+#partition=60
+#broker=5
+#replica=3
+
+### Actual Values
+topicname=$1
+partition=$2
+broker=$3
+replica=$4
+
+### tmporary variables
+#buf='01234'
+buf=`echo $(seq 0 $((broker-1)))| sed 's/ //g'`
+temppart=0
+tmp=broker
+tmppartition=partition
+
+echo "{"version":1,"
+echo " "partitions":["
+
+for i in $(seq $broker) 
+do
+ buflist=`echo ${buf:0:$replica} | sed -E 's/([0-9]{1})/\1, /g'| sed -E 's/, $//g'`
+ temp=$(floor $((tmppartition/tmp))) ### calculate floor function
+   for (( count=1; count<=$temp; count++ ))
+    do
+      if (( partition > temppart + 1 ))
+      then
+        echo "{\"topic\":\"$topicname\", \"partition\":$temppart,  \"replicas\":[$buflist]},"
+      else
+        echo "{\"topic\":\"$topicname\", \"partition\":$temppart,  \"replicas\":[$buflist]}"
+      fi
+      temppart=$((temppart+1))
+    done
+ tmppartition=$((tmppartition-temp))
+ tmp=$((tmp-1))
+ buf=${buf:1:$broker}${buf:0:1}
+done
+
+echo " ]"
+echo "}"
+}
+
+## topic= test, partition=50, brokers=5, replicationfactor=3
+getKafkaResizeJson "test" 50 5 3
