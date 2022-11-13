@@ -24,12 +24,14 @@ Script to help with increasing Kafka topic Replication Factor
         
 
 # My Script to generate the Json File
+The most important part of this process is the json file that needs to be created. To make it automatable, I have written a small script that should be able to generate an output consisting of the json provided:  
+```
+topic= "name of the topic"  
+partition= "total partitions in the topic"  
+brokers= "number of brokers"  
+replicationfactor= "desired replication factor"  
+```
+       
+sample usage: (topic= test, partition=50, brokers=5, replicationfactor=3)  
+```getKafkaResizeJson "test" 50 5 3```  
 
-The most important part of this process is the json file that needs to be created. To make it automatable, I have written a small script that should be able to generate an output consisting of the json provided:
-topic= <name of the topic>
-partition= <total partitions in the topic>
-brokers= <number of brokers>
-replicationfactor= <desired replication factor>
-
-sample usage: (topic= test, partition=50, brokers=5, replicationfactor=3)
-getKafkaResizeJson "test" 50 5 3
