@@ -33,5 +33,7 @@ replicationfactor= "desired replication factor"
 ```
        
 sample usage: (topic= test, partition=50, brokers=5, replicationfactor=3)  
-```getKafkaResizeJson "test" 50 5 3```  
+```
+getKafkaResizeJson "test" 50 5 3
+```  
 
