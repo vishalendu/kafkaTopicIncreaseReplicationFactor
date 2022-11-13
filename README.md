@@ -5,7 +5,7 @@ Script to help with increasing Kafka topic Replication Factor
 
 # Increasing replication factor for a topic
 
-1. Create a custom reassignment plan. In this case we are going from replication factor of 1 to 3.
+1. Create a custom reassignment plan. Got to the last section to generate the file (My Script to generate the Json File)
 2. Run Kafka partition reassignment script:
 
        kafka-reassign-partitions --zookeeper $ZOOKEEPER_CONNECT \
