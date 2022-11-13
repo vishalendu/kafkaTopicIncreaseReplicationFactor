@@ -39,6 +39,6 @@ to load its member functions in memory and then you can call the function as fol
   
 sample usage: (topic= test, partition=26, brokers=5, replicationfactor=3)  
 ```
-getKafkaResizeJson "test" 26 5 3
+getKafkaResizeJson "test" 26 5 3 >sample.json
 ```  
 ##### Note: The sample output for the above command is also provided as sample.json
