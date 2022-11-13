@@ -20,7 +20,7 @@ Script to help with increasing Kafka topic Replication Factor
            
 4. More verifications
 
-        ./kafka-topics --zookeeper $ZOOKEEPER_CONNECT --describe --topic __consumer_offsets
+        ./kafka-topics --zookeeper $ZOOKEEPER_CONNECT --describe --topic <topicname>
         
 
 # My Script to generate the Json File
