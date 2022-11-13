@@ -37,7 +37,7 @@ While using the script in bash you can do
 to load its member functions in memory and then you can call the function as follows:  
   
   
-sample usage: (topic= test, partition=50, brokers=5, replicationfactor=3)  
+sample usage: (topic= test, partition=26, brokers=5, replicationfactor=3)  
 ```
 getKafkaResizeJson "test" 26 5 3
 ```  
