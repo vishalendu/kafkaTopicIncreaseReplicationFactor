@@ -23,8 +23,8 @@ temppart=0
 tmp=broker
 tmppartition=partition
 
-echo "{"version":1,"
-echo " "partitions":["
+echo "{\"version\":1,"
+echo " \"partitions\":["
 
 for i in $(seq $broker) 
 do
@@ -50,4 +50,4 @@ echo "}"
 }
 
 ## topic= test, partition=50, brokers=5, replicationfactor=3
-getKafkaResizeJson "test" 26 5 3
+getKafkaResizeJson "test" 50 5 3
